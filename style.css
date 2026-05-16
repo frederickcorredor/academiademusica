@@ -22,7 +22,14 @@
       background: var(--white);
       color: var(--navy);
       overflow-x: hidden;
+
+      
     }
+main{
+          display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+}
 
     /* ─── NAV ─── */
     nav {
@@ -84,8 +91,18 @@
     .mobile-menu .nav-cta { margin-top: 20px; text-align: center; display: block; padding: 14px; }
 
     /* ─── HERO ─── */
+
+    .wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: 1600px;
+    }
+
+  
+
     #inicio {
-      min-height: 100vh;
       background: var(--navy-deep);
       position: relative; overflow: hidden;
       display: flex; align-items: center;
@@ -187,7 +204,7 @@
     }
 
     /* ─── SECTION COMMON ─── */
-    section { padding: 100px 5%; }
+    section { padding: 100px 5%;width: 100%; max-width: 100vw; }
     .section-tag {
       display: inline-block;
       font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
@@ -735,6 +752,7 @@
       background: var(--navy-deep);
       padding: 60px 5% 32px;
       border-top: 1px solid rgba(255,255,255,0.06);
+      width: 100%;
     }
     .footer-top {
       display: grid; grid-template-columns: 1.5fr 1fr 1fr;
