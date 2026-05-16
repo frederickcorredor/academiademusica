@@ -1,653 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Estudia Música | Academia con el Maestro Francisco Fernández</title>
-  <meta name="description" content="Academia de música presencial en San Cristóbal, Táchira y online. Aprende guitarra, teoría musical y más con el Maestro Francisco Fernández, 20 años de experiencia." />
-  <meta name="keywords" content="academia de música, guitarra, San Cristóbal, Táchira, clases online, Maestro Francisco Fernández, aprender música Venezuela" />
-  <meta property="og:title" content="Estudia Música | Academia del Maestro Francisco Fernández" />
-  <meta property="og:description" content="Clases presenciales en San Cristóbal y online. Diagnóstico personalizado, planes flexibles, excelencia académica." />
+  <title>Academia de Música en San Cristóbal y Online | Estudia Música</title>
+  <meta name="description" content="Aprende guitarra, canto, piano y teoría musical en la Academia de Música del Maestro Francisco Fernández. Clases presenciales en San Cristóbal, Táchira y online para todo el mundo con más de 20 años de experiencia." />
+  <link rel="canonical" href="https://www.estudiamusica.com/" />
+  
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.estudiamusica.com/" />
+  <meta property="og:title" content="Academia de Música en San Cristóbal y Clases Online | Maestro Francisco Fernández" />
+  <meta property="og:description" content="Formación musical profesional presencial y online. Diagnóstico personalizado, planes flexibles y excelencia académica con maestros calificados." />
+  <meta property="og:image" content="https://www.estudiamusica.com/images/og-principal.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Academia de Música en San Cristóbal y Clases Online" />
+  <meta name="twitter:description" content="Aprende música con el Maestro Francisco Fernández. Clases personalizadas de guitarra, piano, canto y más." />
+  <meta name="twitter:image" content="https://www.estudiamusica.com/images/og-principal.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <link rel="stylesheet" href="style.css">
 
-    :root {
-      --navy: #102542;
-      --navy-deep: #0a1a2e;
-      --navy-mid: #1a3560;
-      --red: #B31313;
-      --red-light: #d41a1a;
-      --white: #ffffff;
-      --off-white: #f5f3ef;
-      --gray: #6b7280;
-      --gray-light: #e8e4df;
-      --gold: #c9a84c;
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body: 'DM Sans', sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--white);
-      color: var(--navy);
-      overflow-x: hidden;
-    }
-
-    /* ─── NAV ─── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(16, 37, 66, 0.97);
-      backdrop-filter: blur(12px);
-      padding: 0 5%;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 70px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      transition: all 0.3s;
-    }
-    nav.scrolled { height: 60px; box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
-    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .nav-logo-icon {
-      width: 42px; height: 42px; position: relative; flex-shrink: 0;
-    }
-    .nav-logo-icon .sq-r {
-      position: absolute; top: 0; left: 0;
-      width: 28px; height: 28px; background: var(--red);
-      border-radius: 4px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .nav-logo-icon .sq-n {
-      position: absolute; bottom: 0; right: 0;
-      width: 28px; height: 28px; background: var(--navy-mid);
-      border-radius: 4px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .nav-logo-icon .sq-r span, .nav-logo-icon .sq-n span {
-      color: white; font-family: var(--font-display); font-weight: 700; font-size: 13px; line-height: 1;
-    }
-    .nav-logo-text { line-height: 1.1; }
-    .nav-logo-text .t1 { color: #fff; font-family: var(--font-display); font-size: 17px; font-weight: 700; letter-spacing: 0.02em; }
-    .nav-logo-text .t2 { color: var(--red); font-family: var(--font-display); font-size: 13px; font-weight: 400; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
-    .nav-links a:hover { color: white; }
-    .nav-cta {
-      background: var(--red); color: white; border: none; border-radius: 6px;
-      padding: 10px 22px; font-family: var(--font-body); font-size: 14px; font-weight: 600;
-      cursor: pointer; letter-spacing: 0.03em; text-transform: uppercase;
-      text-decoration: none; transition: background 0.2s, transform 0.15s;
-    }
-    .nav-cta:hover { background: var(--red-light); transform: translateY(-1px); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: white; transition: all 0.3s; }
-    .mobile-menu {
-      display: none; position: fixed; top: 70px; left: 0; right: 0;
-      background: var(--navy-deep); padding: 24px 5% 32px; z-index: 99;
-      flex-direction: column; gap: 0; border-bottom: 2px solid var(--red);
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      color: rgba(255,255,255,0.8); text-decoration: none; font-size: 16px; font-weight: 500;
-      padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
-      text-transform: uppercase; letter-spacing: 0.05em;
-    }
-    .mobile-menu .nav-cta { margin-top: 20px; text-align: center; display: block; padding: 14px; }
-
-    /* ─── HERO ─── */
-    #inicio {
-      min-height: 100vh;
-      background: var(--navy-deep);
-      position: relative; overflow: hidden;
-      display: flex; align-items: center;
-      padding: 120px 5% 80px;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 60% 60% at 80% 50%, rgba(179,19,19,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 80% at 10% 80%, rgba(26,53,96,0.6) 0%, transparent 60%);
-    }
-    .hero-lines {
-      position: absolute; inset: 0; overflow: hidden; opacity: 0.04;
-    }
-    .hero-lines::before {
-      content: '';
-      position: absolute; top: -50%; left: -50%; right: -50%; bottom: -50%;
-      background-image: repeating-linear-gradient(
-        0deg, transparent, transparent 39px, rgba(255,255,255,0.8) 39px, rgba(255,255,255,0.8) 40px
-      );
-    }
-    .hero-content { position: relative; z-index: 2; max-width: 700px; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(179,19,19,0.15); border: 1px solid rgba(179,19,19,0.4);
-      color: #e88; border-radius: 100px; padding: 6px 16px;
-      font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-      margin-bottom: 28px;
-      animation: fadeUp 0.6s ease both;
-    }
-    .hero-badge::before { content: '♪'; font-size: 14px; }
-    .hero-title {
-      font-family: var(--font-display); font-size: clamp(42px, 7vw, 80px);
-      font-weight: 900; line-height: 1.0; color: white;
-      margin-bottom: 24px;
-      animation: fadeUp 0.6s 0.1s ease both;
-    }
-    .hero-title em { color: var(--red); font-style: normal; }
-    .hero-subtitle {
-      font-size: clamp(15px, 2vw, 18px); color: rgba(255,255,255,0.65);
-      line-height: 1.7; max-width: 520px; margin-bottom: 40px;
-      font-weight: 300;
-      animation: fadeUp 0.6s 0.2s ease both;
-    }
-    .hero-btns {
-      display: flex; gap: 16px; flex-wrap: wrap;
-      animation: fadeUp 0.6s 0.3s ease both;
-    }
-    .btn-primary {
-      background: var(--red); color: white; border: none; border-radius: 8px;
-      padding: 16px 32px; font-family: var(--font-body); font-size: 15px; font-weight: 600;
-      cursor: pointer; letter-spacing: 0.04em; text-decoration: none;
-      transition: all 0.2s; display: inline-block; text-align: center;
-    }
-    .btn-primary:hover { background: var(--red-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(179,19,19,0.4); }
-    .btn-outline {
-      background: transparent; color: white;
-      border: 1.5px solid rgba(255,255,255,0.35); border-radius: 8px;
-      padding: 16px 32px; font-family: var(--font-body); font-size: 15px; font-weight: 500;
-      cursor: pointer; text-decoration: none; letter-spacing: 0.04em;
-      transition: all 0.2s; display: inline-block; text-align: center;
-    }
-    .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.08); }
-    .hero-stats {
-      display: flex; gap: 40px; flex-wrap: wrap; margin-top: 60px;
-      padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);
-      animation: fadeUp 0.6s 0.4s ease both;
-    }
-    .stat { }
-    .stat-num {
-      font-family: var(--font-display); font-size: 36px; font-weight: 700; color: white; line-height: 1;
-    }
-    .stat-num span { color: var(--red); }
-    .stat-label { font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px; }
-    .hero-image-wrap {
-      position: absolute; right: 0; top: 0; bottom: 0;
-      width: 45%; display: flex; align-items: center;
-    }
-    .hero-note-visual {
-      position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
-      font-size: 320px; line-height: 1; color: rgba(255,255,255,0.02);
-      font-family: var(--font-display); font-weight: 900; user-select: none;
-    }
-    .floating-note {
-      position: absolute; font-size: 24px; opacity: 0.15; color: white;
-      animation: float 4s ease-in-out infinite;
-    }
-    .fn1 { top: 20%; right: 20%; animation-delay: 0s; }
-    .fn2 { top: 60%; right: 35%; animation-delay: 1.5s; }
-    .fn3 { top: 40%; right: 10%; animation-delay: 0.8s; font-size: 18px; }
-    .fn4 { top: 75%; right: 18%; animation-delay: 2.2s; font-size: 20px; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-16px) rotate(8deg); }
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ─── SECTION COMMON ─── */
-    section { padding: 100px 5%; }
-    .section-tag {
-      display: inline-block;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--red); border-bottom: 2px solid var(--red); padding-bottom: 4px;
-      margin-bottom: 20px;
-    }
-    .section-title {
-      font-family: var(--font-display); font-size: clamp(30px, 4vw, 52px);
-      font-weight: 800; line-height: 1.1; color: var(--navy);
-      margin-bottom: 20px;
-    }
-    .section-title em { color: var(--red); font-style: normal; }
-    .section-sub {
-      font-size: 17px; color: var(--gray); line-height: 1.7; max-width: 560px;
-      font-weight: 300;
-    }
-
-    /* ─── MODALIDADES ─── */
-    #modalidades { background: var(--off-white); }
-    .mod-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 28px; margin-top: 60px;
-    }
-    .mod-card {
-      background: white; border-radius: 16px; overflow: hidden;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-      transition: transform 0.3s, box-shadow 0.3s;
-      display: flex; flex-direction: column;
-    }
-    .mod-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
-    .mod-card-header {
-      padding: 48px 40px 32px;
-      position: relative; overflow: hidden;
-    }
-    .mod-card.presencial .mod-card-header { background: var(--navy); }
-    .mod-card.online .mod-card-header { background: linear-gradient(135deg, var(--red) 0%, #8a0f0f 100%); }
-    .mod-card-header .bg-icon {
-      position: absolute; right: -10px; top: -10px;
-      font-size: 140px; opacity: 0.06; line-height: 1;
-    }
-    .mod-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9);
-      border-radius: 100px; padding: 5px 14px; font-size: 11px; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px;
-    }
-    .mod-card-header h3 {
-      font-family: var(--font-display); font-size: 30px; font-weight: 800; color: white; margin-bottom: 10px;
-    }
-    .mod-card-header p { color: rgba(255,255,255,0.75); font-size: 15px; line-height: 1.6; }
-    .mod-card-body { padding: 36px 40px; flex: 1; }
-    .mod-features { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-    .mod-features li {
-      display: flex; align-items: flex-start; gap: 12px;
-      font-size: 15px; color: #374151; line-height: 1.5;
-    }
-    .mod-features li::before {
-      content: '✓'; color: var(--red); font-weight: 700; font-size: 15px;
-      flex-shrink: 0; margin-top: 1px;
-    }
-    .mod-card .btn-primary { margin-top: 28px; width: 100%; }
-    .mod-card.online .btn-primary { background: var(--navy); }
-    .mod-card.online .btn-primary:hover { background: var(--navy-mid); }
-
-    /* ─── DIRECTOR ─── */
-    #director { background: white; }
-    .director-wrap {
-      display: grid; grid-template-columns: 1fr 1.6fr;
-      gap: 80px; align-items: center; margin-top: 60px;
-    }
-    .director-visual {
-      position: relative;
-    }
-    .director-card-bg {
-      width: 100%; aspect-ratio: 3/4; border-radius: 16px;
-      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
-      position: relative; overflow: hidden;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 40px;
-    }
-    .director-card-bg::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 30% 30%, rgba(179,19,19,0.2) 0%, transparent 60%);
-    }
-    .dir-icon {
-      width: 110px; height: 110px; background: rgba(255,255,255,0.07);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 52px; margin-bottom: 28px; border: 2px solid rgba(255,255,255,0.12);
-      position: relative; z-index: 1;
-    }
-    .dir-name {
-      font-family: var(--font-display); font-size: 22px; font-weight: 700; color: white;
-      text-align: center; margin-bottom: 6px; position: relative; z-index: 1;
-    }
-    .dir-title { color: var(--red); font-size: 13px; font-weight: 500; text-align: center; letter-spacing: 0.05em; position: relative; z-index: 1; }
-    .dir-chips {
-      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; justify-content: center; position: relative; z-index: 1;
-    }
-    .dir-chip {
-      background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8);
-      border-radius: 100px; padding: 4px 14px; font-size: 11px; font-weight: 500;
-      letter-spacing: 0.04em;
-    }
-    .dir-accent {
-      position: absolute; bottom: -16px; right: -16px;
-      width: 80px; height: 80px; border-radius: 12px; background: var(--red);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 36px; box-shadow: 0 8px 24px rgba(179,19,19,0.5);
-    }
-    .director-info { }
-    .director-info p {
-      font-size: 16px; color: #4b5563; line-height: 1.85; margin-bottom: 20px; font-weight: 300;
-    }
-    .director-info p:first-of-type { font-size: 18px; color: var(--navy); font-weight: 400; }
-    .masters-list {
-      margin: 32px 0;
-      background: var(--off-white); border-radius: 12px; padding: 24px 28px;
-      border-left: 4px solid var(--red);
-    }
-    .masters-list h4 { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
-    .masters-list ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .masters-list ul li {
-      font-size: 14px; color: #374151; display: flex; align-items: center; gap: 10px;
-    }
-    .masters-list ul li::before { content: '♪'; color: var(--red); }
-    .intl-countries {
-      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px;
-    }
-    .country-tag {
-      background: var(--navy); color: white;
-      border-radius: 8px; padding: 6px 14px; font-size: 12px; font-weight: 600;
-      letter-spacing: 0.04em;
-    }
-
-    /* ─── PROGRAMAS ─── */
-    #programas { background: var(--navy-deep); }
-    #programas .section-tag { color: #e88; border-color: #e88; }
-    #programas .section-title { color: white; }
-    #programas .section-sub { color: rgba(255,255,255,0.55); }
-    .plans-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 24px; margin-top: 60px; align-items: start;
-    }
-    .plan-card {
-      border-radius: 16px; overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-    }
-    .plan-card:hover { transform: translateY(-6px); }
-    .plan-card.featured {
-      transform: scale(1.03);
-      box-shadow: 0 0 0 2px var(--red), 0 24px 60px rgba(179,19,19,0.3);
-    }
-    .plan-card.featured:hover { transform: scale(1.03) translateY(-6px); }
-    .plan-header {
-      padding: 36px 32px 28px;
-      background: rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .plan-card.featured .plan-header { background: rgba(179,19,19,0.2); border-bottom-color: rgba(179,19,19,0.3); }
-    .plan-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      color: rgba(255,255,255,0.5); margin-bottom: 12px;
-    }
-    .plan-card.featured .plan-label { color: #e88; }
-    .plan-name {
-      font-family: var(--font-display); font-size: 22px; font-weight: 700; color: white; margin-bottom: 8px;
-    }
-    .plan-freq { font-size: 13px; color: rgba(255,255,255,0.5); }
-    .plan-pricing { margin-top: 20px; }
-    .plan-old-price { font-size: 14px; color: rgba(255,255,255,0.35); text-decoration: line-through; }
-    .plan-price { font-family: var(--font-display); font-size: 44px; font-weight: 800; color: white; line-height: 1; }
-    .plan-price sup { font-size: 22px; vertical-align: top; margin-top: 8px; font-family: var(--font-body); font-weight: 600; }
-    .plan-promo-badge {
-      display: inline-block;
-      background: var(--red); color: white;
-      font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 4px 10px; border-radius: 4px; margin-left: 8px; vertical-align: middle;
-    }
-    .plan-body { padding: 28px 32px; background: rgba(255,255,255,0.03); }
-    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
-    .plan-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.75); }
-    .plan-features li span.icon { color: var(--red); font-size: 16px; flex-shrink: 0; }
-    .plan-card .btn-primary { width: 100%; text-align: center; display: block; padding: 14px; }
-    .plan-card:not(.featured) .btn-primary {
-      background: rgba(255,255,255,0.1); color: white;
-    }
-    .plan-card:not(.featured) .btn-primary:hover { background: rgba(255,255,255,0.2); transform: none; box-shadow: none; }
-    .plan-note { text-align: center; margin-top: 48px; }
-    .plan-note p { color: rgba(255,255,255,0.45); font-size: 14px; }
-    .plan-note a { color: rgba(255,255,255,0.7); }
-
-    /* ─── METHODOLOGY ─── */
-    #metodologia { background: var(--off-white); }
-    .method-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 28px; margin-top: 60px;
-    }
-    .method-card {
-      background: white; border-radius: 14px; padding: 36px 28px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .method-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
-    .method-num {
-      font-family: var(--font-display); font-size: 60px; font-weight: 900;
-      color: rgba(179,19,19,0.1); line-height: 1; margin-bottom: 16px;
-      letter-spacing: -4px;
-    }
-    .method-icon { font-size: 32px; margin-bottom: 16px; }
-    .method-card h3 { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-    .method-card p { font-size: 14px; color: var(--gray); line-height: 1.7; }
-
-    /* ─── WHY ─── */
-    #por-que { background: white; }
-    .why-wrap {
-      display: grid; grid-template-columns: 1.2fr 1fr;
-      gap: 80px; align-items: center; margin-top: 60px;
-    }
-    .why-list { display: flex; flex-direction: column; gap: 28px; }
-    .why-item { display: flex; gap: 20px; align-items: flex-start; }
-    .why-icon {
-      width: 52px; height: 52px; flex-shrink: 0;
-      background: rgba(179,19,19,0.08); border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px;
-      transition: background 0.2s;
-    }
-    .why-item:hover .why-icon { background: var(--red); }
-    .why-item h4 { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-    .why-item p { font-size: 14px; color: var(--gray); line-height: 1.65; }
-    .why-visual {
-      background: linear-gradient(145deg, var(--navy) 0%, var(--navy-deep) 100%);
-      border-radius: 20px; padding: 48px 40px;
-      position: relative; overflow: hidden;
-    }
-    .why-visual::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(circle at 70% 30%, rgba(179,19,19,0.25) 0%, transparent 60%);
-    }
-    .why-visual h3 {
-      font-family: var(--font-display); font-size: 28px; font-weight: 800; color: white;
-      line-height: 1.2; margin-bottom: 28px; position: relative; z-index: 1;
-    }
-    .why-visual h3 em { color: var(--red); font-style: normal; }
-    .results-list { list-style: none; display: flex; flex-direction: column; gap: 16px; position: relative; z-index: 1; }
-    .results-list li {
-      display: flex; align-items: center; gap: 14px;
-      background: rgba(255,255,255,0.07); border-radius: 10px; padding: 14px 18px;
-    }
-    .results-list li .r-icon { font-size: 22px; }
-    .results-list li div { flex: 1; }
-    .results-list li .r-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
-    .results-list li .r-val { font-size: 15px; color: white; font-weight: 600; }
-
-    /* ─── TESTIMONIALS ─── */
-    #testimonios { background: var(--off-white); }
-    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
-    .test-card {
-      background: white; border-radius: 14px; padding: 32px 28px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      transition: transform 0.3s;
-    }
-    .test-card:hover { transform: translateY(-4px); }
-    .test-stars { color: var(--gold); font-size: 16px; margin-bottom: 16px; letter-spacing: 2px; }
-    .test-text { font-size: 15px; color: #374151; line-height: 1.75; font-style: italic; margin-bottom: 24px; }
-    .test-author { display: flex; align-items: center; gap: 14px; }
-    .test-avatar {
-      width: 44px; height: 44px; border-radius: 50%; background: var(--navy);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-display); font-size: 18px; font-weight: 700; color: white; flex-shrink: 0;
-    }
-    .test-name { font-weight: 600; font-size: 14px; color: var(--navy); }
-    .test-loc { font-size: 12px; color: var(--gray); margin-top: 2px; }
-
-    /* ─── CONTACT ─── */
-    #contacto { background: var(--navy); }
-    #contacto .section-tag { color: #e88; border-color: #e88; }
-    #contacto .section-title { color: white; }
-    #contacto .section-sub { color: rgba(255,255,255,0.55); }
-    .contact-wrap {
-      display: grid; grid-template-columns: 1fr 1.2fr;
-      gap: 80px; align-items: start; margin-top: 60px;
-    }
-    .contact-info { }
-    .contact-info h3 {
-      font-family: var(--font-display); font-size: 24px; font-weight: 700; color: white; margin-bottom: 28px;
-    }
-    .contact-items { display: flex; flex-direction: column; gap: 20px; }
-    .contact-item { display: flex; gap: 16px; align-items: flex-start; }
-    .c-icon {
-      width: 46px; height: 46px; background: rgba(255,255,255,0.08); border-radius: 10px;
-      display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
-    }
-    .c-label { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
-    .c-val { font-size: 15px; color: rgba(255,255,255,0.85); font-weight: 500; }
-    .c-val a { color: inherit; text-decoration: none; }
-    .c-val a:hover { color: white; text-decoration: underline; }
-    .contact-form-card {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 16px; padding: 40px 36px;
-    }
-    .contact-form-card h3 { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: white; margin-bottom: 28px; }
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 8px; padding: 12px 16px; color: white; font-family: var(--font-body); font-size: 14px;
-      outline: none; transition: border-color 0.2s;
-    }
-    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--red); }
-    .form-group select option { background: var(--navy-deep); color: white; }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-submit { width: 100%; padding: 16px; font-size: 16px; }
-    .form-note { text-align: center; color: rgba(255,255,255,0.35); font-size: 12px; margin-top: 14px; }
-
-    /* ─── FOOTER ─── */
-    footer {
-      background: var(--navy-deep);
-      padding: 60px 5% 32px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-    .footer-top {
-      display: grid; grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 60px; margin-bottom: 48px;
-    }
-    .footer-brand p { color: rgba(255,255,255,0.45); font-size: 14px; line-height: 1.7; margin-top: 16px; max-width: 280px; }
-    .footer-col h4 { color: white; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 18px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-col ul li a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 14px; transition: color 0.2s; }
-    .footer-col ul li a:hover { color: white; }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: gap; gap: 16px; }
-    .footer-bottom p { color: rgba(255,255,255,0.3); font-size: 13px; }
-    .footer-bottom .footer-logo-text { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.5); }
-    .footer-bottom .footer-logo-text em { color: var(--red); font-style: normal; }
-
-    /* ─── WHATSAPP FLOAT ─── */
-    .wa-float {
-      position: fixed; bottom: 28px; right: 28px; z-index: 200;
-      width: 58px; height: 58px; border-radius: 50%;
-      background: #25d366;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 6px 24px rgba(37,211,102,0.5);
-      text-decoration: none; font-size: 28px;
-      transition: transform 0.2s, box-shadow 0.2s;
-      animation: pulse-wa 2s ease-in-out infinite;
-    }
-    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,0.7); animation: none; }
-    @keyframes pulse-wa {
-      0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.5); }
-      50% { box-shadow: 0 6px 40px rgba(37,211,102,0.8); }
-    }
-
-    /* ─── SCROLL REVEAL ─── */
-    .reveal {
-      opacity: 0; transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 1024px) {
-      .plans-grid { grid-template-columns: 1fr; max-width: 460px; margin: 60px auto 0; }
-      .plan-card.featured { transform: none; }
-      .plan-card.featured:hover { transform: translateY(-6px); }
-      .method-grid { grid-template-columns: 1fr 1fr; }
-      .director-wrap { grid-template-columns: 1fr; }
-      .director-visual { max-width: 360px; }
-    }
-    @media (max-width: 768px) {
-      section { padding: 72px 5%; }
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; }
-      .hero-image-wrap { display: none; }
-      #inicio { padding: 100px 5% 72px; }
-      .mod-grid { grid-template-columns: 1fr; }
-      .method-grid { grid-template-columns: 1fr; }
-      .why-wrap { grid-template-columns: 1fr; gap: 48px; }
-      .test-grid { grid-template-columns: 1fr; }
-      .contact-wrap { grid-template-columns: 1fr; gap: 48px; }
-      .footer-top { grid-template-columns: 1fr; gap: 36px; }
-      .hero-stats { gap: 24px; }
-      .form-row { grid-template-columns: 1fr; }
-      .director-wrap { gap: 48px; }
-    }
-    @media (max-width: 480px) {
-      .hero-btns { flex-direction: column; }
-      .btn-primary, .btn-outline { width: 100%; text-align: center; }
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicSchool",
+    "name": "Estudia Música - Academia del Maestro Francisco Fernández",
+    "image": "https://www.estudiamusica.com/images/og-principal.jpg",
+    "description": "Academia de música presencial en San Cristóbal, Táchira y clases online de guitarra, canto, piano y armonía.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Cristóbal",
+      "addressRegion": "Táchira",
+      "addressCountry": "VE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "7.76667",
+      "longitude": "-72.23333"
+    },
+    "url": "https://www.estudiamusica.com",
+    "telephone": "+58XXXXXXXXX",
+    "priceRange": "$$",
+    "provider": {
+      "@type": "Person",
+      "name": "Francisco Antonio Fernández",
+      "jobTitle": "Director y Maestro de Música"
+    }
+  }
+  </script>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav id="main-nav">
-    <a href="#inicio" class="nav-logo">
-      <div class="nav-logo-icon">
-        <div class="sq-r"><span>F</span></div>
-        <div class="sq-n"><span>M</span></div>
-      </div>
-      <div class="nav-logo-text">
-        <div class="t1">Estudia</div>
-        <div class="t2">Música</div>
-      </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#modalidades">Modalidades</a></li>
-      <li><a href="#director">Director</a></li>
-      <li><a href="#programas">Planes</a></li>
-      <li><a href="#metodologia">Metodología</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-    <a href="#contacto" class="nav-cta">Inscríbete</a>
-    <div class="hamburger" id="hamburger" aria-label="Menú">
-      <span></span><span></span><span></span>
+<header>
+    <nav id="main-nav" aria-label="Navegación principal">
+      <a href="#inicio" class="nav-logo">
+        <div class="nav-logo-icon" aria-hidden="true">
+          <div class="sq-r"><span>F</span></div>
+          <div class="sq-n"><span>M</span></div>
+        </div>
+        <div class="nav-logo-text">
+          <span class="t1">Estudia</span>
+          <span class="t2">Música</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#modalidades">Modalidades</a></li>
+        <li><a href="#catedras">Cátedras</a></li>
+        <li><a href="#maestros">Profesores</a></li>
+        <li><a href="#director">Director</a></li>
+        <li><a href="#programas">Planes y Precios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <a href="#contacto" class="nav-cta">Inscríbete</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú de navegación" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu" aria-label="Navegación móvil" hidden>
+      <a href="#modalidades" onclick="closeMenu()">Modalidades</a>
+      <a href="#catedras" onclick="closeMenu()">Cátedras</a>
+      <a href="#maestros" onclick="closeMenu()">Profesores</a>
+      <a href="#director" onclick="closeMenu()">Director</a>
+      <a href="#programas" onclick="closeMenu()">Planes</a>
+      <a href="#metodologia" onclick="closeMenu()">Metodología</a>
+      <a href="#contacto" onclick="closeMenu()">Contacto</a>
+      <a href="#contacto" class="nav-cta" onclick="closeMenu()">Inscríbete Ahora</a>
     </div>
-  </nav>
-
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#modalidades" onclick="closeMenu()">Modalidades</a>
-    <a href="#director" onclick="closeMenu()">Director</a>
-    <a href="#programas" onclick="closeMenu()">Planes</a>
-    <a href="#metodologia" onclick="closeMenu()">Metodología</a>
-    <a href="#contacto" onclick="closeMenu()">Contacto</a>
-    <a href="#contacto" class="nav-cta" onclick="closeMenu()">Inscríbete Ahora</a>
-  </div>
-
+  </header>
+  <main>
   <!-- HERO -->
   <section id="inicio">
     <div class="hero-bg"></div>
     <div class="hero-lines"></div>
     <div class="hero-content">
-      <div class="hero-badge">Academia de Música Profesional</div>
-      <h1 class="hero-title">Tu talento<br>merece<br><em>excelencia.</em></h1>
-      <p class="hero-subtitle">Aprende música con el Maestro Francisco Fernández: 20 años de experiencia, metodología personalizada, clases presenciales en San Cristóbal y modalidad online para todo el mundo.</p>
+      <span class="hero-badge">Formación Musical de Alto Nivel</span>
+      <h1 class="hero-title">Academia de Música Profesional</h1>
+      <p class="hero-subtitle">Aprende música con el Maestro Francisco Fernández y su equipo: 20 años de experiencia, metodología personalizada, clases presenciales en San Cristóbal Venezuela y modalidad online para todo el mundo.</p>
       <div class="hero-btns">
         <a href="#programas" class="btn-primary">Ver Planes y Precios</a>
-        <a href="#director" class="btn-outline">Conoce al Maestro</a>
+        <a href="#director" class="btn-outline">Conoce al Director</a>
       </div>
       <div class="hero-stats">
         <div class="stat">
@@ -655,8 +110,8 @@
           <div class="stat-label">Años de experiencia</div>
         </div>
         <div class="stat">
-          <div class="stat-num">5<span>+</span></div>
-          <div class="stat-label">Países con cátedra</div>
+          <div class="stat-num">6</div>
+          <div class="stat-label">Cátedras disponibles</div>
         </div>
         <div class="stat">
           <div class="stat-num">2</div>
@@ -676,15 +131,15 @@
   <!-- MODALIDADES -->
   <section id="modalidades">
     <div class="section-tag">Modalidades de Estudio</div>
-    <h2 class="section-title">Estudia como<br>mejor te funcione</h2>
-    <p class="section-sub">Dos opciones diseñadas para que ninguna distancia o circunstancia te aleje de tu formación musical.</p>
+    <h2 class="section-title">Clases de Música Presenciales en Táchira y en Vivo Online desde cualquier pais</h2>
+    <p class="section-sub">Dos opciones diseñadas para ofrecerte una formación musical rigurosa adaptada a tu disponibilidad y ubicación geográfica.</p>
     <div class="mod-grid reveal">
       <div class="mod-card presencial">
         <div class="mod-card-header">
           <div class="bg-icon">🏛️</div>
-          <div class="mod-badge">📍 Presencial</div>
+          <span class="mod-badge">📍 Modalidad Presencial</span>
           <h3>San Cristóbal,<br>Táchira</h3>
-          <p>Clases cara a cara en nuestra academia, con la guía directa del Maestro Fernández en un ambiente profesional.</p>
+          <p>Clases particulares en nuestra academia bajo la guía directa de nuestros maestros en un ambiente acústico profesional.</p>
         </div>
         <div class="mod-card-body">
           <ul class="mod-features">
@@ -700,17 +155,17 @@
       <div class="mod-card online">
         <div class="mod-card-header">
           <div class="bg-icon">🌐</div>
-          <div class="mod-badge">🌐 Online</div>
-          <h3>Aprende desde<br>donde estés</h3>
-          <p>Clases en vivo por videoconferencia. La misma calidad y dedicación del Maestro, sin importar tu ubicación en el mundo.</p>
+          <span class="mod-badge">🌐 Modalidad Online</span>
+          <h3>Aprende Música desde<br>Cualquier País</h3>
+          <p>Clases personalizadas en vivo mediante videoconferencia en alta definición. Misma excelencia académica sin barreras geográficas.</p>
         </div>
         <div class="mod-card-body">
           <ul class="mod-features">
-            <li>Sesiones en vivo con el Maestro Fernández</li>
-            <li>Disponible en cualquier país del mundo</li>
-            <li>Materiales y partituras digitales incluidos</li>
-            <li>Grabación de sesiones para repasar</li>
-            <li>Seguimiento y métricas de progreso</li>
+            <li>Sesiones individuales en tiempo real con nuestros maestros</li>
+            <li>Disponible para estudiantes de Latinoamérica, España y EE. UU.</li>
+            <li>Material de estudio, métodos y partituras digitales incluidos</li>
+            <li>Acceso a grabaciones de las clases para optimizar tu práctica</li>
+            <li>Plataforma de seguimiento pedagógico y métricas de avance</li>
           </ul>
           <a href="#contacto" class="btn-primary">Inscribirse Online</a>
         </div>
@@ -718,10 +173,134 @@
     </div>
   </section>
 
+  <!-- CÁTEDRAS -->
+  <section id="catedras">
+    <div class="section-tag">Nuestras Cátedras</div>
+    <h2 class="section-title">Programas de Formación e Instrumentos Musicales</h2>
+    <p class="section-sub">Ofrecemos especialización en seis áreas fundamentales de la música con un enfoque metodológico adaptativo para todas las edades.</p>
+    <div class="catedras-grid">
+
+      <!-- Canto -->
+      <div class="catedra-card reveal">
+        <div class="catedra-card-top">
+          <div class="catedra-bg-note">♩</div>
+          <div class="catedra-icon">🎤</div>
+          <h3>Clases de Canto y Técnica Vocal</h3>
+          <span class="catedra-tag">Voz · Proyección · Estilo</span>
+        </div>
+        <div class="catedra-card-body">
+          <p>Desarrolla tu potencial vocal desde los fundamentos anatómicos hasta el dominio escénico. Trabajamos respiración diafragmática, colocación, afinación y repertorio en géneros líricos y populares.</p>
+          <div class="catedra-levels">
+            <span class="catedra-level">Principiante</span>
+            <span class="catedra-level">Intermedio</span>
+            <span class="catedra-level">Avanzado</span>
+          </div>
+          <a href="#contacto" class="catedra-cta">Inscribirme en Canto →</a>
+        </div>
+      </div>
+
+      <!-- Piano -->
+      <div class="catedra-card reveal reveal-delay-1">
+        <div class="catedra-card-top">
+          <div class="catedra-bg-note">♪</div>
+          <div class="catedra-icon">🎹</div>
+          <h3>Piano</h3>
+          <span class="catedra-tag">Clásico · Popular</span>
+        </div>
+        <div class="catedra-card-body">
+          <p>Formación pianística integral que abarca desde la agilidad digital, escalas y postura, hasta la interpretación de obras maestras barrocas, clásicas y arreglos modernos de música popular.</p>
+          <div class="catedra-levels">
+            <span class="catedra-level">Principiante</span>
+            <span class="catedra-level">Intermedio</span>
+            <span class="catedra-level">Avanzado</span>
+          </div>
+          <a href="#contacto" class="catedra-cta">Inscribirme en Piano →</a>
+        </div>
+      </div>
+
+      <!-- Guitarra -->
+      <div class="catedra-card reveal reveal-delay-2">
+        <div class="catedra-card-top">
+          <div class="catedra-bg-note">♬</div>
+          <div class="catedra-icon">🎸</div>
+          <h3>Clases de Guitarra Clásica y Latinoamericana</h3>
+          <span class="catedra-tag">Cátedra Insignia · Solistas</span>
+        </div>
+        <div class="catedra-card-body">
+          <p>Aprende técnica superior de guitarra con el Maestro Francisco Fernández, reconocido solista de la Orquesta Sinfónica Simón Bolívar del Táchira. Perfecciona tu ejecución, fraseo y repertorio internacional.</p>
+          <div class="catedra-levels">
+            <span class="catedra-level">Principiante</span>
+            <span class="catedra-level">Intermedio</span>
+            <span class="catedra-level">Avanzado</span>
+          </div>
+          <a href="#contacto" class="catedra-cta">Inscribirme en Guitarra →</a>
+        </div>
+      </div>
+
+      <!-- Cuatro -->
+      <div class="catedra-card reveal">
+        <div class="catedra-card-top">
+          <div class="catedra-bg-note">♫</div>
+          <div class="catedra-icon">🪕</div>
+          <h3>Clases de Cuatro Venezolano</h3>
+          <span class="catedra-tag">Música Tradicional · Rasgueos</span>
+        </div>
+        <div class="catedra-card-body">
+          <p>Domina el instrumento bandera de Venezuela. Aprende patrones rítmicos de joropo, merengue venezolano y danza, combinando técnicas tradicionales con armonía y fusiones contemporáneas avanzadas.</p>
+          <div class="catedra-levels">
+            <span class="catedra-level">Principiante</span>
+            <span class="catedra-level">Intermedio</span>
+            <span class="catedra-level">Avanzado</span>
+          </div>
+          <a href="#contacto" class="catedra-cta">Inscribirme en Cuatro →</a>
+        </div>
+      </div>
+
+      <!-- Lenguaje Musical -->
+      <div class="catedra-card reveal reveal-delay-1">
+        <div class="catedra-card-top">
+          <div class="catedra-bg-note">𝄞</div>
+          <div class="catedra-icon">🎼</div>
+          <h3>Teoría Musical, Solfeo y Dictado</h3>
+          <span class="catedra-tag">Lectura Rítmica · Entrenamiento Auditivo</span>
+        </div>
+        <div class="catedra-card-body">
+          <p>El núcleo de la autonomía musical. Desarrolla la lectura fluida a primera vista en clave de Sol y de Fa, analiza estructuras rítmicas complejas y entrena tu oído interno mediante dictados melódicos progresivos.</p>
+          <div class="catedra-levels">
+            <span class="catedra-level">Básico</span>
+            <span class="catedra-level">Intermedio</span>
+            <span class="catedra-level">Superior</span>
+          </div>
+          <a href="#contacto" class="catedra-cta">Inscribirme en Lenguaje →</a>
+        </div>
+      </div>
+
+      <!-- Armonía -->
+      <div class="catedra-card reveal reveal-delay-2">
+        <div class="catedra-card-top">
+          <div class="catedra-bg-note">♮</div>
+          <div class="catedra-icon">🎵</div>
+          <h3>Armonía Moderna y Composición Musical</h3>
+          <span class="catedra-tag">Análisis Tonal · Arreglos · Composición</span>
+        </div>
+        <div class="catedra-card-body">
+          <p>Comprende las leyes que rigen los acordes y la conducción de voces. Estuda progresiones cadenciales, sustituciones tritónicas, armonía modal y técnicas aplicadas a la composición y arreglos instrumentales.</p>
+          <div class="catedra-levels">
+            <span class="catedra-level">Funcional</span>
+            <span class="catedra-level">Extendida</span>
+            <span class="catedra-level">Jazz</span>
+          </div>
+          <a href="#contacto" class="catedra-cta">Inscribirme en Armonía →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- DIRECTOR -->
   <section id="director">
-    <div class="section-tag">Nuestro Director</div>
-    <h2 class="section-title">Maestro <em>Francisco</em><br>Antonio Fernández</h2>
+    <div class="section-tag">Dirección Académica</div>
+    <h2 class="section-title">Trayectoria del Maestro Francisco Antonio Fernández</h2>
     <div class="director-wrap">
       <div class="director-visual reveal">
         <div class="director-card-bg">
@@ -732,28 +311,27 @@
             <span class="dir-chip">Guitarra Clásica</span>
             <span class="dir-chip">Composición</span>
             <span class="dir-chip">Arreglos</span>
-            <span class="dir-chip">Cámara</span>
-            <span class="dir-chip">Orquesta</span>
+            <span class="dir-chip">Música de Cámar</span>
+            <span class="dir-chip">Dirección Orquestal</span>
           </div>
         </div>
         <div class="dir-accent">🏆</div>
       </div>
       <div class="director-info reveal reveal-delay-1">
-        <p>Músico venezolano originario de San Cristóbal, Táchira, con una trayectoria que integra la ejecución instrumental de alto nivel, la composición y una pedagogía musical reconocida internacionalmente.</p>
-        <p>Su formación inició en la <strong>Escuela de Música Miguel Ángel Espinel</strong> y se consolidó con estudios superiores en la <strong>UNET</strong>. Un hito de su carrera fue su actuación como solista junto a la <strong>Orquesta Sinfónica "Simón Bolívar" del Táchira</strong>, interpretando el magistral Concierto de Aranjuez.</p>
+        <p>Músico concertista originario de San Cristóbal, Táchira, cuya sólida trayectoria integra la ejecución de la guitarra clásica al más alto nivel, el análisis analítico de la composición y una pedagogía musical de proyección global.</p>
+        <p>Inició sus estudios profesionales en la emblemática <strong>Escuela de Música Miguel Ángel Espinel</strong> y consolidó su formación superior en la <strong>Universidad Nacional Experimental del Táchira (UNET)</strong>. Ha marcado hitos artísticos como solista junto a la <strong>Orquesta Sinfónica "Simón Bolívar" del Táchira</strong>, interpretando el célebre <em>Concierto de Aranjuez</em> de Joaquín Rodrigo.</p>
         <div class="masters-list">
-          <h4>Clases Magistrales con Figuras Legendarias</h4>
+          <h4>Perfeccionamiento Musical con Figuras Internacionales</h4>
           <ul>
-            <li>Alirio Díaz — Ícono de la guitarra latinoamericana</li>
-            <li>Carlos Bonell — Maestro de la guitarra clásica mundial</li>
-            <li>Yamandú Costa — Virtuoso del Brasil y las cuerdas</li>
+            <li>Alirio Díaz — Leyenda e ícono de la escuela guitarrística latinoamericana.</li>
+            <li>Carlos Bonell — Catedrático y maestro eminente de la guitarra clásica en el Royal College of Music de Londres.</li>
+            <li>Yamandú Costa — Virtuoso mundial de las cuerdas y la improvisación instrumental de Brasil.</li>
           </ul>
         </div>
         <p>Ha dictado cátedra en academias de reconocimiento internacional y suma <strong>dos décadas de experiencia docente</strong> formando músicos de alto nivel.</p>
         <div class="intl-countries">
           <span class="country-tag">🇻🇪 Venezuela</span>
           <span class="country-tag">🇨🇴 Colombia</span>
-          <span class="country-tag">🇦🇼 Aruba</span>
           <span class="country-tag">🇪🇨 Ecuador</span>
           <span class="country-tag">🇲🇽 México</span>
         </div>
@@ -761,28 +339,174 @@
     </div>
   </section>
 
+  <!-- MAESTROS CARRUSEL -->
+  <section id="maestros">
+    <div class="section-tag">Cuerpo Docente</div>
+    <h2 class="section-title">Profesores de Música Calificados y Especialistas</h2>
+    <p class="section-sub">Conoce al equipo de profesores de nuestra academia: músicos en activo, titulados y con un alto compromiso con el desarrollo pedagógico de cada alumno.</p>
+
+    <div class="carousel-wrapper reveal">
+      <div class="carousel-track-container">
+        <div class="carousel-track" id="carouselTrack">
+
+          <!-- Slide 1: Francisco Fernández – Guitarra -->
+          <div class="maestro-slide">
+            <div class="maestro-visual">
+              <div class="maestro-avatar">🎸</div>
+              <div class="maestro-name">Mstr. Francisco A. Fernández</div>
+              <div class="maestro-catedra-badge">Especialidad: Guitarra y Armonía</div>
+              <div class="maestro-deco-note">♩</div>
+            </div>
+            <div class="maestro-info">
+              <div class="maestro-quote-mark">"</div>
+              <p class="maestro-bio">Director y fundador de la institución. Con más de 20 años de experiencia docente presencial y online, especializa su labor pedagógica en la interpretación avanzada de la guitarra solista, composición musical clásica y contemporánea, y la estructuración de la hoja de ruta trimestral de la academia.</p>
+              <div class="maestro-specialties">
+                <span class="maestro-spec-tag">Guitarra Clásica</span>
+                <span class="maestro-spec-tag">Guitarra Popular</span>
+                <span class="maestro-spec-tag">Composición</span>
+                <span class="maestro-spec-tag">Arreglos</span>
+                <span class="maestro-spec-tag">Música de Cámara</span>
+              </div>
+              <div class="maestro-modality">
+                <span class="modality-pill active">📍 Presencial</span>
+                <span class="modality-pill active">🌐 Online</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Maestra de Canto -->
+          <div class="maestro-slide">
+            <div class="maestro-visual">
+              <div class="maestro-avatar">🎤</div>
+              <div class="maestro-name">Mtra. Isabel Montoya</div>
+              <div class="maestro-catedra-badge">Canto</div>
+              <div class="maestro-deco-note">♪</div>
+            </div>
+            <div class="maestro-info">
+              <div class="maestro-quote-mark">"</div>
+              <p class="maestro-bio">Soprano lírica con formación en el Conservatorio de Música Simón Bolívar y estudios de perfeccionamiento en Buenos Aires. Ha actuado en importantes escenarios de Venezuela y Colombia, con repertorio que abarca desde ópera barroca hasta música contemporánea latinoamericana. Su enfoque pedagógico combina rigor técnico y sensibilidad artística, adaptando cada clase a la voz y el estilo único de cada alumno.</p>
+              <div class="maestro-specialties">
+                <span class="maestro-spec-tag">Técnica Vocal</span>
+                <span class="maestro-spec-tag">Ópera</span>
+                <span class="maestro-spec-tag">Canto Popular</span>
+                <span class="maestro-spec-tag">Respiración</span>
+                <span class="maestro-spec-tag">Repertorio Lírico</span>
+              </div>
+              <div class="maestro-modality">
+                <span class="modality-pill active">📍 Presencial</span>
+                <span class="modality-pill active">🌐 Online</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Maestro de Piano -->
+          <div class="maestro-slide">
+            <div class="maestro-visual">
+              <div class="maestro-avatar">🎹</div>
+              <div class="maestro-name">Mstr. Andrés Valero</div>
+              <div class="maestro-catedra-badge">Piano</div>
+              <div class="maestro-deco-note">♬</div>
+            </div>
+            <div class="maestro-info">
+              <div class="maestro-quote-mark">"</div>
+              <p class="maestro-bio">Pianista con estudios superiores en la Universidad de los Andes y especialización en pedagogía musical. Ha sido solista y acompañante en festivales de música de cámara en Venezuela y Colombia. Su metodología integra la lectura a primera vista, la improvisación y el repertorio clásico-romántico con un lenguaje accesible para estudiantes de todos los niveles, desde niños hasta adultos.</p>
+              <div class="maestro-specialties">
+                <span class="maestro-spec-tag">Piano Clásico</span>
+                <span class="maestro-spec-tag">Piano Popular</span>
+                <span class="maestro-spec-tag">Lectura a Vista</span>
+                <span class="maestro-spec-tag">Música de Cámara</span>
+                <span class="maestro-spec-tag">Improvisación</span>
+              </div>
+              <div class="maestro-modality">
+                <span class="modality-pill active">📍 Presencial</span>
+                <span class="modality-pill active">🌐 Online</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4: Maestro de Cuatro -->
+          <div class="maestro-slide">
+            <div class="maestro-visual">
+              <div class="maestro-avatar">🪕</div>
+              <div class="maestro-name">Mstr. Carlos Rondón</div>
+              <div class="maestro-catedra-badge">Cuatro</div>
+              <div class="maestro-deco-note">♫</div>
+            </div>
+            <div class="maestro-info">
+              <div class="maestro-quote-mark">"</div>
+              <p class="maestro-bio">Cuatrista llanero con raíces en el Apure y formación académica en el Instituto Universitario de Estudios Musicales (IUDEM). Integrante de agrupaciones de joropo de proyección nacional e internacional, ha llevado el cuatro venezolano a escenarios en Colombia, Ecuador y España. Especialista en técnicas tradicionales y en la fusión del cuatro con otros géneros como la salsa, el jazz y el pop latinoamericano.</p>
+              <div class="maestro-specialties">
+                <span class="maestro-spec-tag">Joropo Llanero</span>
+                <span class="maestro-spec-tag">Rasgueo</span>
+                <span class="maestro-spec-tag">Técnica Melódica</span>
+                <span class="maestro-spec-tag">Fusión Contemporánea</span>
+                <span class="maestro-spec-tag">Acompañamiento</span>
+              </div>
+              <div class="maestro-modality">
+                <span class="modality-pill active">📍 Presencial</span>
+                <span class="modality-pill active">🌐 Online</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5: Maestra de Lenguaje Musical y Armonía -->
+          <div class="maestro-slide">
+            <div class="maestro-visual">
+              <div class="maestro-avatar">🎼</div>
+              <div class="maestro-name">Mtra. Valentina Ríos</div>
+              <div class="maestro-catedra-badge">Lenguaje · Armonía</div>
+              <div class="maestro-deco-note">𝄞</div>
+            </div>
+            <div class="maestro-info">
+              <div class="maestro-quote-mark">"</div>
+              <p class="maestro-bio">Compositora y teórica con licenciatura en Composición Musical por la UNEARTE. Ha impartido cátedra de Lenguaje Musical y Armonía en conservatorios y academias de Caracas y San Cristóbal. Su metodología convierte la teoría musical en una herramienta viva y práctica, conectando constantemente los conceptos académicos con la música que los estudiantes tocan e interpretan día a día.</p>
+              <div class="maestro-specialties">
+                <span class="maestro-spec-tag">Solfeo</span>
+                <span class="maestro-spec-tag">Teoría Musical</span>
+                <span class="maestro-spec-tag">Armonía Tonal</span>
+                <span class="maestro-spec-tag">Armonía Jazz</span>
+                <span class="maestro-spec-tag">Dictado Auditivo</span>
+              </div>
+              <div class="maestro-modality">
+                <span class="modality-pill active">📍 Presencial</span>
+                <span class="modality-pill active">🌐 Online</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /carousel-track -->
+      </div><!-- /carousel-track-container -->
+
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prevBtn" aria-label="Anterior">&#8592;</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn" id="nextBtn" aria-label="Siguiente">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
   <!-- PROGRAMAS -->
   <section id="programas">
     <div class="section-tag">Planes y Membresías</div>
-    <h2 class="section-title" style="color:white;">Elige tu <em style="color:var(--red)">ruta</em><br>al éxito</h2>
-    <p class="section-sub">Cada estudiante comienza con un <strong style="color:rgba(255,255,255,0.8)">Diagnóstico de Competencias</strong> personalizado. Tus metas, nuestro compromiso.</p>
+    <h2 class="section-title">Inversión y Precios de las Clases de Música</h2>
+    <p class="section-sub">Todo proceso inicia con un <strong>Diagnóstico de Competencias Inicial</strong> sin costo adicional tras tu inscripción. Selecciona la modalidad idónea para tu ritmo de aprendizaje.</p>
     <div class="plans-grid reveal">
 
       <div class="plan-card">
         <div class="plan-header">
-          <div class="plan-label">Para refuerzo puntual</div>
-          <div class="plan-name">Sesión Individual</div>
-          <div class="plan-freq">Por sesión · Presencial u Online</div>
+          <span class="plan-label">Refuerzo y Tutorías</span>
+          <div class="plan-name">Sesión de Música Individual</div>
+          <div class="plan-freq">Por clase agendada · Presencial u Online</div>
           <div class="plan-pricing">
             <div class="plan-price"><sup>$</sup>29<sup style="font-size:20px">.99</sup></div>
           </div>
         </div>
         <div class="plan-body">
           <ul class="plan-features">
-            <li><span class="icon">✓</span> 1 sesión individual</li>
-            <li><span class="icon">✓</span> Ideal para dudas puntuales</li>
-            <li><span class="icon">✓</span> Preparación de evaluaciones</li>
-            <li><span class="icon">✓</span> Presencial u Online</li>
+            <li><span class="icon">✓</span> 1 Sesión particular intensiva (60 min)</li>
+            <li><span class="icon">✓</span> Resolución de dudas técnicas específicas</li>
+            <li><span class="icon">✓</span> Preparación enfocada en audiciones o exámenes</li>
+            <li><span class="icon">✓</span> Flexibilidad de asignación presencial u online</li>
           </ul>
           <a href="#contacto" class="btn-primary">Agendar Sesión</a>
         </div>
@@ -790,9 +514,9 @@
 
       <div class="plan-card featured">
         <div class="plan-header">
-          <div class="plan-label">⭐ Más popular</div>
-          <div class="plan-name">Plan Esencial</div>
-          <div class="plan-freq">4 Sesiones · 1 clase por semana</div>
+          <span class="plan-label">⭐ Plan Recomendado</span>
+          <div class="plan-name">Plan de Estudio Esencial</div>
+          <span class="plan-freq">Membresía Mensual · 1 clase por semana</span>
           <div class="plan-pricing">
             <div class="plan-old-price">$99.99</div>
             <div class="plan-price"><sup>$</sup>79<sup style="font-size:20px">.99</sup> <span class="plan-promo-badge">Promo</span></div>
@@ -800,11 +524,11 @@
         </div>
         <div class="plan-body">
           <ul class="plan-features">
-            <li><span class="icon">✓</span> 4 clases personalizadas</li>
-            <li><span class="icon">✓</span> 1 sesión por semana</li>
-            <li><span class="icon">✓</span> Diagnóstico de competencias incluido</li>
-            <li><span class="icon">✓</span> Hoja de ruta trimestral</li>
-            <li><span class="icon">✓</span> Materiales digitales</li>
+            <li><span class="icon">✓</span> 4 Clases particulares personalizadas al mes</li>
+            <li><span class="icon">✓</span> Diagnóstico analítico de competencias inicial</li>
+            <li><span class="icon">✓</span> Diseño de Hoja de Ruta y metas trimestrales</li>
+            <li><span class="icon">✓</span> Acceso ilimitado a materiales digitales didácticos</li>
+            <li><span class="icon">✓</span> Soporte y revisión semanal de asignaciones</li>
           </ul>
           <a href="#contacto" class="btn-primary">Iniciar Ahora</a>
         </div>
@@ -841,113 +565,113 @@
 
   <!-- METODOLOGIA -->
   <section id="metodologia">
-    <div class="section-tag">Nuestra Metodología</div>
-    <h2 class="section-title">Un proceso<br>diseñado para <em>ti</em></h2>
-    <p class="section-sub">No seguimos un método genérico. Cada estudiante tiene su propia hoja de ruta, con proyecciones trimestrales y resultados medibles.</p>
+    <span class="section-tag">Metodología Pedagógica</span>
+    <h2 class="section-title">El Sistema de Enseñanza Musical Progresivo</h2>
+    <p class="section-sub">Descartamos los métodos de enseñanza genéricos y masivos. Diseñamos estructuras de aprendizaje individuales basadas en objetivos claros, proyecciones por trimestre y resultados auditivos verificables.</p>
     <div class="method-grid">
       <div class="method-card reveal">
         <div class="method-num">01</div>
         <div class="method-icon">🎯</div>
         <h3>Diagnóstico de Competencias</h3>
-        <p>Iniciamos con una evaluación personalizada para conocer tu nivel, tus metas y estilo de aprendizaje. Ningún alumno es igual.</p>
+        <p>Evaluamos rigurosamente tu nivel técnico de partida, tu psicomotricidad aplicada al instrumento, tus metas personales y tu perfil de asimilación cognitiva.</p>
       </div>
       <div class="method-card reveal reveal-delay-1">
         <div class="method-num">02</div>
         <div class="method-icon">🗺️</div>
         <h3>Hoja de Ruta Trimestral</h3>
-        <p>Diseñamos un plan con metas claras y proyecciones trimestrales. Cada sesión es un paso firme y medible hacia tu objetivo.</p>
+        <p>Estructuramos un plan académico a medida con metas precisas a corto y mediano plazo. Cada sesión cumple una función estratégica definida.</p>
       </div>
       <div class="method-card reveal reveal-delay-2">
         <div class="method-num">03</div>
         <div class="method-icon">🎵</div>
-        <h3>Clases Personalizadas</h3>
-        <p>El contenido se adapta a tu ritmo, tu repertorio favorito y tu estilo. Aprendes lo que quieres aprender, bien.</p>
+        <h3>Clases Individuales</h3>
+        <p>Las clases se enfocan al 100% en tu desarrollo personal, optimizando la digitación y adaptando el repertorio clásico o popular de tu preferencia.</p>
       </div>
       <div class="method-card reveal">
         <div class="method-num">04</div>
         <div class="method-icon">📊</div>
-        <h3>Seguimiento y Métricas</h3>
-        <p>Evaluamos tu avance trimestralmente. Ves resultados tangibles y ajustamos el plan para maximizar tu desarrollo.</p>
+        <h3>Seguimiento Analítico</h3>
+        <p>Medimos de forma continua y trimestral tu progreso técnico y de lectura, ofreciendo retroalimentación transparente e hitos alcanzados.</p>
       </div>
       <div class="method-card reveal reveal-delay-1">
         <div class="method-num">05</div>
         <div class="method-icon">🏅</div>
         <h3>Excelencia Docente</h3>
-        <p>Un maestro con 20 años de experiencia y formación internacional en cada sesión. No enseñamos a medias.</p>
+        <p>Aprenderás exclusivamente con maestros con sólida formación universitaria, experiencia sinfónica real y comprobada trayectoria didáctica.</p>
       </div>
       <div class="method-card reveal reveal-delay-2">
         <div class="method-num">06</div>
         <div class="method-icon">🌍</div>
-        <h3>Sin Límites de Distancia</h3>
-        <p>Presencial en San Cristóbal o en vivo desde cualquier país. Tu formación no se detiene por la geografía.</p>
+        <h3>Acceso Sin Fronteras</h3>
+        <p>Alterna o cursa de forma fija en la sede física de San Cristóbal o mediante nuestro sistema estructurado de aulas virtuales en vivo.</p>
       </div>
     </div>
   </section>
 
   <!-- POR QUÉ -->
   <section id="por-que">
-    <div class="section-tag">Por Qué Elegirnos</div>
-    <h2 class="section-title">La diferencia<br>es <em>real</em></h2>
+    <span class="section-tag">Ventajas de Nuestra Academia</span>
+    <h2 class="section-title">¿Por Qué Estudiar en Nuestra Escuela de Música?</h2>
     <div class="why-wrap">
       <div class="why-list">
         <div class="why-item reveal">
           <div class="why-icon">🎯</div>
           <div>
-            <h4>Personalización Total</h4>
-            <p>El contenido se adapta a tu ritmo y objetivos, no al revés. Cada clase es diseñada específicamente para ti.</p>
+            <h3>Personalización Pedagógica Real</h3>
+            <p>Las lecciones y la velocidad del programa se ajustan de manera estricta a ti. Avanzas sin vacíos conceptuales ni presiones externas.</p>
           </div>
         </div>
         <div class="why-item reveal reveal-delay-1">
           <div class="why-icon">🧭</div>
           <div>
-            <h4>Visión Estratégica</h4>
-            <p>Diagnóstico inicial y metas trimestrales incluidas en todos los planes. Siempre sabrás dónde estás y hacia dónde vas.</p>
+            <h3>Visión Estratégica del Progreso</h3>
+            <p>Olvídate de tocar sin rumbo. Con el diagnóstico inicial y la fijación de metas trimestrales tendrás un mapa nítido de tu evolución musical.</p>
           </div>
         </div>
         <div class="why-item reveal reveal-delay-2">
           <div class="why-icon">🏆</div>
           <div>
-            <h4>Excelencia Académica</h4>
-            <p>Un maestro con trayectoria sinfónica, premios internacionales y décadas formando músicos de alto nivel.</p>
+            <h3>Excelencia Académica y Musical</h3>
+            <p>Aprende de primera mano con músicos concertistas galardonados y con amplia trayectoria en orquestas sinfónicas profesionales.</p>
           </div>
         </div>
         <div class="why-item reveal reveal-delay-3">
           <div class="why-icon">🌐</div>
           <div>
-            <h4>Flexibilidad Real</h4>
-            <p>Presencial en Táchira o completamente online. Horarios adaptados a tu vida, no al revés.</p>
+            <h3>Flexibilidad de Horarios</h3>
+            <p>Sincroniza tus lecciones presenciales en el Estado Táchira o desde nuestra aula virtual interactiva global en los bloques horarios de tu comodidad.</p>
           </div>
         </div>
       </div>
       <div class="why-visual reveal reveal-delay-1">
-        <h3>Estás a un diagnóstico de <em>comenzar tu historia</em> musical</h3>
+        <h3>Estás a un diagnóstico de iniciar tu trayectoria musical profesional</h3>
         <ul class="results-list">
           <li>
             <span class="r-icon">📅</span>
             <div>
-              <div class="r-label">Metodología</div>
+              <span class="r-label">Metodología de Estudio</span>
               <div class="r-val">Seguimiento trimestral con metas</div>
             </div>
           </li>
           <li>
-            <span class="r-icon">🎸</span>
+            <span class="r-icon">🎓</span>
             <div>
-              <div class="r-label">Instrumento principal</div>
-              <div class="r-val">Guitarra clásica, popular y más</div>
+              <span class="r-label">Cátedras disponibles</span>
+              <div class="r-val">Canto, Piano, Guitarra, Cuatro, Lenguaje, Armonía</div>
             </div>
           </li>
           <li>
             <span class="r-icon">🌍</span>
             <div>
-              <div class="r-label">Alcance</div>
-              <div class="r-val">Venezuela y todo el mundo (online)</div>
+              <span class="r-label">Alcance Global</span>
+              <div class="r-val">Sede Presencial y Alumnos en más de 5 países</div>
             </div>
           </li>
           <li>
             <span class="r-icon">⭐</span>
             <div>
-              <div class="r-label">Experiencia del docente</div>
-              <div class="r-val">20 años · 5 países con cátedra</div>
+              <<span class="r-label">Garantía Pedagógica</span>
+              <div class="r-val">Dirección con 20+ Años de Trayectoria</div>
             </div>
           </li>
         </ul>
@@ -957,8 +681,8 @@
 
   <!-- TESTIMONIOS -->
   <section id="testimonios">
-    <div class="section-tag">Testimonios</div>
-    <h2 class="section-title">Lo que dicen<br>nuestros <em>estudiantes</em></h2>
+    <span class="section-tag">Opiniones de Alumnos</span>
+    <h2 class="section-title">Testimonios de Estudiantes y Representantes</h2>
     <div class="test-grid">
       <div class="test-card reveal">
         <div class="test-stars">★★★★★</div>
@@ -967,7 +691,7 @@
           <div class="test-avatar">A</div>
           <div>
             <div class="test-name">Andrea M.</div>
-            <div class="test-loc">📍 San Cristóbal · Presencial</div>
+            <div class="test-loc">📍 San Cristóbal · Guitarra Presencial</div>
           </div>
         </div>
       </div>
@@ -978,7 +702,7 @@
           <div class="test-avatar">R</div>
           <div>
             <div class="test-name">Rodrigo V.</div>
-            <div class="test-loc">🇪🇨 Ecuador · Online</div>
+            <div class="test-loc">🇪🇨 Ecuador · Piano Online</div>
           </div>
         </div>
       </div>
@@ -989,13 +713,13 @@
           <div class="test-avatar">M</div>
           <div>
             <div class="test-name">María F.</div>
-            <div class="test-loc">🇨🇴 Colombia · Online</div>
+            <div class="test-loc">🇨🇴 Colombia · Canto Online</div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
+</main>
   <!-- CONTACTO -->
   <section id="contacto">
     <div class="section-tag">Contáctanos</div>
@@ -1052,6 +776,19 @@
           <input type="email" placeholder="tu@correo.com" />
         </div>
         <div class="form-group">
+          <label>Cátedra de interés</label>
+          <select>
+            <option value="">Selecciona una cátedra</option>
+            <option>Canto</option>
+            <option>Piano</option>
+            <option>Guitarra</option>
+            <option>Cuatro</option>
+            <option>Lenguaje Musical</option>
+            <option>Armonía</option>
+            <option>No sé aún, necesito orientación</option>
+          </select>
+        </div>
+        <div class="form-group">
           <label>Modalidad de interés</label>
           <select>
             <option value="">Selecciona una opción</option>
@@ -1099,18 +836,21 @@
         <h4>Academia</h4>
         <ul>
           <li><a href="#director">Nuestro Director</a></li>
+          <li><a href="#maestros">Nuestros Maestros</a></li>
+          <li><a href="#catedras">Cátedras</a></li>
           <li><a href="#metodologia">Metodología</a></li>
           <li><a href="#modalidades">Modalidades</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Planes</h4>
+        <h4>Cátedras</h4>
         <ul>
-          <li><a href="#programas">Plan Esencial</a></li>
-          <li><a href="#programas">Alto Rendimiento</a></li>
-          <li><a href="#programas">Sesión Individual</a></li>
-          <li><a href="#contacto">Diagnóstico Gratuito</a></li>
+          <li><a href="#catedras">Canto</a></li>
+          <li><a href="#catedras">Piano</a></li>
+          <li><a href="#catedras">Guitarra</a></li>
+          <li><a href="#catedras">Cuatro</a></li>
+          <li><a href="#catedras">Lenguaje Musical</a></li>
+          <li><a href="#catedras">Armonía</a></li>
         </ul>
       </div>
     </div>
@@ -1122,57 +862,6 @@
 
   <!-- WhatsApp Float -->
   <a href="https://wa.me/1234567890" target="_blank" class="wa-float" title="Escríbenos por WhatsApp" rel="noopener">💬</a>
-
-  <script>
-    // NAV scroll effect
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    // Hamburger
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-    });
-    function closeMenu() {
-      mobileMenu.classList.remove('open');
-    }
-
-    // Scroll Reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-    reveals.forEach(el => revealObserver.observe(el));
-
-    // Form submit
-    function handleSubmit() {
-      const btn = document.querySelector('.form-submit');
-      btn.textContent = '✓ Enviado — Te contactaremos pronto';
-      btn.style.background = '#1a8c4e';
-      btn.disabled = true;
-    }
-
-    // Smooth scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const id = a.getAttribute('href');
-        if (id.length > 1) {
-          const el = document.querySelector(id);
-          if (el) {
-            e.preventDefault();
-            el.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-      });
-    });
-  </script>
+<script src="script.js"></script>
 </body>
 </html>
