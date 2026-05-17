@@ -103,7 +103,8 @@ main{
   
 
     #inicio {
-      background: var(--navy-deep);
+      background-image: url(fondobanner.webp);
+      background-size: cover; background-position: center top;
       position: relative; overflow: hidden;
       display: flex; align-items: center;
       padding: 120px 5% 80px;
@@ -114,16 +115,7 @@ main{
         radial-gradient(ellipse 60% 60% at 80% 50%, rgba(179,19,19,0.12) 0%, transparent 60%),
         radial-gradient(ellipse 50% 80% at 10% 80%, rgba(26,53,96,0.6) 0%, transparent 60%);
     }
-    .hero-lines {
-      position: absolute; inset: 0; overflow: hidden; opacity: 0.04;
-    }
-    .hero-lines::before {
-      content: '';
-      position: absolute; top: -50%; left: -50%; right: -50%; bottom: -50%;
-      background-image: repeating-linear-gradient(
-        0deg, transparent, transparent 39px, rgba(255,255,255,0.8) 39px, rgba(255,255,255,0.8) 40px
-      );
-    }
+
     .hero-content { position: relative; z-index: 2; max-width: 700px; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
@@ -186,12 +178,12 @@ main{
       font-family: var(--font-display); font-weight: 900; user-select: none;
     }
     .floating-note {
-      position: absolute; font-size: 24px; opacity: 0.15; color: white;
+      position: absolute; font-size: 30px; opacity: 0.55; color: white;
       animation: float 4s ease-in-out infinite;
     }
     .fn1 { top: 20%; right: 20%; animation-delay: 0s; }
     .fn2 { top: 60%; right: 35%; animation-delay: 1.5s; }
-    .fn3 { top: 40%; right: 10%; animation-delay: 0.8s; font-size: 18px; }
+    .fn3 { top: 40%; right: 10%; animation-delay: 0.8s; font-size: 30px; }
     .fn4 { top: 75%; right: 18%; animation-delay: 2.2s; font-size: 20px; }
 
     @keyframes float {
@@ -294,12 +286,12 @@ main{
       padding: 36px 32px 28px;
       position: relative; overflow: hidden;
     }
-    .catedra-card:nth-child(1) .catedra-card-top { background: linear-gradient(135deg, #102542 0%, #1a3560 100%); }
-    .catedra-card:nth-child(2) .catedra-card-top { background: linear-gradient(135deg, #8a0f0f 0%, #B31313 100%); }
-    .catedra-card:nth-child(3) .catedra-card-top { background: linear-gradient(135deg, #1a4a2e 0%, #1f6b3b 100%); }
-    .catedra-card:nth-child(4) .catedra-card-top { background: linear-gradient(135deg, #5a2d82 0%, #7b3fa0 100%); }
-    .catedra-card:nth-child(5) .catedra-card-top { background: linear-gradient(135deg, #7a4a10 0%, #b8700e 100%); }
-    .catedra-card:nth-child(6) .catedra-card-top { background: linear-gradient(135deg, #0f4a5e 0%, #1a6b80 100%); }
+    .catedra-card:nth-child(1) .catedra-card-top { background-image: url(canto.webp); background-size: cover; background-position: center;}
+    .catedra-card:nth-child(2) .catedra-card-top { background-image: url(piano.webp);background-size: cover; background-position: center;}
+    .catedra-card:nth-child(3) .catedra-card-top { background-image: url(guitarra.webp); background-size: cover; background-position: center bottom;}
+    .catedra-card:nth-child(4) .catedra-card-top { background-image: url(cuadro.webp);background-size: cover; background-position: top;}
+    .catedra-card:nth-child(5) .catedra-card-top { background-image: url(solfeo.webp); background-size: cover; background-position: center bottom; }
+    .catedra-card:nth-child(6) .catedra-card-top { background-image: url(armonia.webp); background-size: cover; background-position: center;}
     .catedra-bg-note {
       position: absolute; right: -8px; top: -12px;
       font-size: 110px; opacity: 0.07; line-height: 1;
@@ -382,7 +374,7 @@ main{
     }
     .dir-chip {
       background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8);
-      border-radius: 100px; padding: 4px 14px; font-size: 11px; font-weight: 500;
+      border-radius: 100px; padding: 4px 14px; font-size: clamp(9px, 2vw, 12px); font-weight: 500;
       letter-spacing: 0.04em;
     }
     .dir-accent {
@@ -452,8 +444,8 @@ main{
       position: relative;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      padding: 48px 36px;
-      min-height: 420px;
+      padding: 30px 36px;
+      min-height: 340px;
     }
     .maestro-visual::before {
       content: '';
@@ -810,9 +802,9 @@ main{
     @media (max-width: 768px) {
       section { padding: 72px 5%; }
       .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; }
+      .hamburger { display: flex;background: none;padding: 6px; }
       .hero-image-wrap { display: none; }
-      #inicio { padding: 100px 5% 72px; }
+      #inicio { padding: 100px 5% 72px;background-position: 600px; }
       .mod-grid { grid-template-columns: 1fr; }
       .method-grid { grid-template-columns: 1fr; }
       .why-wrap { grid-template-columns: 1fr; gap: 48px; }
@@ -825,7 +817,7 @@ main{
       .catedras-grid { grid-template-columns: 1fr; }
       .maestro-slide { grid-template-columns: 1fr; }
       .maestro-visual { min-height: 280px; }
-      .maestro-info { padding: 32px 28px; }
+      .maestro-info { padding: 16px; min-height: 390px;}
       .maestro-quote-mark { display: none; }
     }
     @media (max-width: 480px) {
