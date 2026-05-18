@@ -231,7 +231,7 @@ main{
       padding: 48px 40px 32px;
       position: relative; overflow: hidden;
     }
-    .mod-card.presencial .mod-card-header { background: var(--navy); }
+    .mod-card.presencial .mod-card-header { background-image: url(sancristobal.webp); background-size: cover; background-position: center;}
     .mod-card.online .mod-card-header { background: linear-gradient(135deg, var(--red) 0%, #8a0f0f 100%); }
     .mod-card-header .bg-icon {
       position: absolute; right: -10px; top: -10px;
@@ -239,14 +239,14 @@ main{
     }
     .mod-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9);
+      background: rgb(10 45 123 / 45%); color: rgba(255,255,255,0.9);
       border-radius: 100px; padding: 5px 14px; font-size: 11px; font-weight: 600;
       text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px;
     }
     .mod-card-header h3 {
-      font-family: var(--font-display); font-size: 30px; font-weight: 800; color: white; margin-bottom: 10px;
+      font-family: var(--font-display); font-size: 30px; font-weight: 800; color: white; margin-bottom: 10px;filter: drop-shadow(2px 4px 6px black);
     }
-    .mod-card-header p { color: rgba(255,255,255,0.75); font-size: 15px; line-height: 1.6; }
+    .mod-card-header p { color: rgb(255, 255, 255); font-size: 15px; line-height: 1.6;filter: drop-shadow(2px 4px 6px black); }
     .mod-card-body { padding: 36px 40px; flex: 1; }
     .mod-features { list-style: none; display: flex; flex-direction: column; gap: 14px; }
     .mod-features li {
