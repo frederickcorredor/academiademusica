@@ -5,14 +5,20 @@
     });
 
     // ─── Hamburger ───
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-    });
-    function closeMenu() {
-      mobileMenu.classList.remove('open');
-    }
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+  hamburger.classList.toggle('active', isOpen);
+});
+
+function closeMenu() {
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.classList.remove('active');
+}
 
     // ─── Scroll Reveal ───
     const reveals = document.querySelectorAll('.reveal');
